@@ -1,5 +1,6 @@
 import Hero from "./Components/Hero"
 import Mission from "./Components/Mission"
+import MouseTrail from "./Components/MouseLine"
 import Vision from "./Components/Vision"
 
 function App() {
@@ -7,9 +8,10 @@ function App() {
 
   return (
     <>
-  <Hero />
-  <Vision />
-  <Mission />
+      <MouseTrail />
+      <Hero />
+      <Vision />
+      <Mission />
     </>
   )
 }
