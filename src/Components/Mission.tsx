@@ -8,7 +8,7 @@ import Nft1 from '../assets/images/nft1.png';
 import Nft2 from '../assets/images/nft2.png';
 import Nft3 from '../assets/images/nft3.png';
 import Nft4 from '../assets/images/nft4.png';
-// import MobileImg from '../assets/images/mobileimg.png';
+
 
 const Section = styled.section`
   background-color: #000;
