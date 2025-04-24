@@ -1,6 +1,6 @@
-import React from 'react'
+
 import styled from 'styled-components'
-import cloudsVideo from '../assets/videos/clouds.mp4';
+
 import MenImg from '../assets/images/men22.png'
 
 const HeroContainer = styled.div`

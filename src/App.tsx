@@ -1,4 +1,5 @@
 import Hero from "./Components/Hero"
+import Mission from "./Components/Mission"
 import Vision from "./Components/Vision"
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
   <Hero />
   <Vision />
+  <Mission />
     </>
   )
 }
