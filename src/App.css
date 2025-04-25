@@ -1,0 +1,27 @@
+
+.snap-scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+  }
+  
+  
+  .snap-section {
+    scroll-snap-align: start;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  .snap-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  

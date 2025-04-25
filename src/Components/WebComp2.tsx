@@ -100,16 +100,16 @@ const slideUp = {
 
 };
 
-function WebComp() {
+function WebComp2() {
   return (
     <>
+     
       <DiveContainr>
-        
         <FullScreenOverlay className="">
           <LeftContent className="text-[white] leading-none flex items-center  justify-center flex-col" >
             <motion.img className="w-[100px] absolute top-[22%] left-[10%] " variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-              <motion.h1 variants={slideRight} initial="initial" whileInView="animate" className="text-[75px] text-center text-[lightgray] font-[500] mb-6 tracking-tight"><span className="tracking-tight text-left text-[60px]">web</span><br/> Development</motion.h1>
+              <motion.h1 variants={slideRight} initial="initial" whileInView="animate" className="text-[75px] text-center text-[lightgray] font-[500] mb-6 tracking-tight"><span className="tracking-tight text-[60px]">app</span><br/> Development</motion.h1>
               <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
             </div>
           </LeftContent>
@@ -123,10 +123,8 @@ function WebComp() {
         </FullScreenOverlay>
         <TagContainer />
       </DiveContainr>
-      <hr />
-    
     </>
   );
 }
 
-export default WebComp;
+export default WebComp2;
