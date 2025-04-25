@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-// import Img3 from '../assets/images/3.png';
-// import Img4 from '../assets/images/4.png';
-// import CircleRed from '../assets/images/circlered.png';
+import Img3 from '../assets/images/3.png';
+import Img4 from '../assets/images/4.png';
+import CircleRed from '../assets/images/circlered.png';
 import Nft1 from '../assets/images/nft1.png';
 import Nft2 from '../assets/images/nft2.png';
 import Nft3 from '../assets/images/nft3.png';
@@ -13,49 +13,50 @@ import NftRight from '../assets/images/rightnftbg.jpg';
 import { useEffect, useState } from 'react';
 
 const MainContainer = styled.div`
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
 `;
 
 const GridLayout = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  background-color: #212529;
 `;
 
-const GridItem = styled.div`
-    position: relative;
-    overflow: hidden;
+const GridItem = styled(motion.div)`
+  position: relative;
+  overflow: hidden;
 
-    .center-img {
-        background-color: #212529;
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  .center-img {
+    background-color: #212529;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const RightGridItem = styled(GridItem)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const AnimatedNFT = styled(motion.img)`
-    position: absolute;
-    z-index: 100;
-    max-width: 40%;
-    max-height: 30%;
-    object-fit: contain;
+  position: absolute;
+  z-index: 100;
+  max-width: 40%;
+  max-height: 30%;
+  object-fit: contain;
 `;
 
 const AnimatedText = styled(motion.p)`
-    margin: 10px 10px;
-    font-family: sans-serif;
-    color: #bcb0b0; 
-    font-size: 13px; 
-    text-align: right; 
+  margin: 10px 10px;
+  font-family: sans-serif;
+  color: #bcb0b0;
+  font-size: 13px;
+  text-align: right;
 `;
 
 const nftImages: string[] = [Nft1, Nft2, Nft3, Nft4];
@@ -73,13 +74,16 @@ const textVariants = {
 };
 
 const animationDuration = 1;
-const displayDuration = 2; 
+const displayDuration = 2;
 const textAnimationDuration = 0.5;
 const textDisplayDuration = 3;
+
 const textContents = [
     "Our mission is to provide better service {} and design to educate people about NFTs, their uses, and potential and potential impact on industries.",
     "We provide accurate and up-to-date <br/> information to help individuals and <br/>businesses make informed decisions about NFTs.",
 ];
+
+
 
 function Mission() {
     const [CurrentInd, setCurrentInd] = useState(0);
@@ -109,9 +113,10 @@ function Mission() {
     return (
         <MainContainer>
             <GridLayout>
-                <GridItem style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <img src={NftLeft} alt="Left NFT" /> 
-                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', textAlign: 'center' }}>
+
+                <GridItem initial={{ x: 400, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 2 }} className="flex justify-center items-center relative">
+                    <img src={NftLeft} alt="Left NFT" />
+                    <div className="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 text-center">
                         <AnimatePresence mode="wait">
                             <AnimatedText
                                 key={textContents[currentTextIndex]}
@@ -119,21 +124,61 @@ function Mission() {
                                 initial="initial"
                                 animate="animate"
                                 exit="exit"
-                                transition={{ duration: textAnimationDuration, ease: "easeInOut" }}
+                                transition={{ duration: textAnimationDuration, ease: 'easeInOut' }}
                             >
-                                {textContents[currentTextIndex]}
+                                <span dangerouslySetInnerHTML={{ __html: textContents[currentTextIndex] }} />
                             </AnimatedText>
                         </AnimatePresence>
                     </div>
                 </GridItem>
-                <GridItem>
-                    <img className='bg-[#212529]' src={Nftbg} alt="Center NFT" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontSize: '1.2rem', textAlign: 'center' }}>
-                        Center Content
+
+
+
+
+                <GridItem className="relative">
+                    <img
+                        src={Nftbg}
+                        alt="Center NFT"
+                        className="w-full bg-[#212529] h-full object-cover absolute top-0 left-0 z-0"
+                    />
+
+                    <div className="absolute top-0 left-0 w-full h-full z-10 flex items-center">
+                        <div></div>
+
+                        <motion.div
+                            initial={{ y: 100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1.2, ease: "easeOut" }}
+                            className="h-[80%] w-full flex items-start justify-start border-l-[1px]"
+                        >
+                            <img src={Img3} alt="Top" className="h-full w-auto object-cover" />
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ y: -100, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+                            className="h-[80%] w-full relative flex items-end justify-start border-l-[1px]"
+                        >
+                            <img src={Img4} alt="Bottom" className="h-full object-cover" />
+                            <img
+                                src={CircleRed}
+                                alt="Circle"
+                                className="absolute top-1/2 -left-8 transform -translate-y-1/2"
+                            />
+                        </motion.div>
                     </div>
                 </GridItem>
-                <RightGridItem>
-                    <img src={NftRight} alt="Right Background" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }} />
+
+
+
+
+                <RightGridItem initial={{ x: -400, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 2 }}>
+                    <img
+                        src={NftRight}
+                        alt="Right Background"
+                        className="absolute top-0 left-0 w-full h-full object-cover z-[1]"
+                    />
                     <AnimatePresence mode="wait">
                         {isImageVisible && (
                             <AnimatedNFT
@@ -144,7 +189,7 @@ function Mission() {
                                 initial="initial"
                                 animate="animate"
                                 exit="exit"
-                                transition={{ duration: animationDuration, ease: "easeInOut" }}
+                                transition={{ duration: animationDuration, ease: 'easeInOut' }}
                             />
                         )}
                     </AnimatePresence>
