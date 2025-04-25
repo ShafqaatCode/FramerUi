@@ -4,6 +4,7 @@ import MenRobeImg from '../assets/images/menrobe.png'
 import OneImg from '../assets/images/1.png'
 import TwoImg from '../assets/images/2.png'
 import RedCircle from '../assets/images/circlered.png'
+import {  motion } from 'framer-motion'
 
 
 const VisionContainer = styled.div`
@@ -26,29 +27,41 @@ p{
 }
 `
 
+
+
+
 function Vision() {
     return (
         <VisionContainer>
 
             <VisionWrap className='grid grid-cols-3 gap-4'>
-                <div className="box1 m-auto">
-                    <img className='w-[70%]  m-auto' src={MenRobeImg} alt="" />
+                <div  className="box1 m-auto">
+                    <motion.img initial={{ y: -200, opacity: 0 }}     
+                            whileInView={{ y: 0, opacity: 1 ,}}        
+                            transition={{ duration: 2, ease: "easeOut" }}   className='w-[70%]  m-auto' src={MenRobeImg} alt="" />
                 </div>
                 <div className="box1">
                     <div className='flex 
                      ' >
-                        <div className='relative'>
+                        <motion.div initial={{ y: 100, opacity: 0 }}     
+                            whileInView={{ y: 0, opacity: 1 ,}}        
+                            transition={{ duration: 2, ease: "easeOut" }} className='relative'>
                             <img src={OneImg} className='w-[70%] border-l-[1px]' />
                             <img src={RedCircle} className='absolute top-[40%] left-[-30px] ' />
-                        </div>
-                        
+                        </motion.div>
+
                         <div className='text-left m-auto '>
-                            <img src={TwoImg} className='w-[70%]' />
+                            <motion.img initial={{ y: -100, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 1 }}
+
+                                viewport={{ once: true, amount: 0.5 }} src={TwoImg} className='w-[70%]' />
                         </div>
                     </div>
                 </div>
                 <div className="box1 border-l-[1px] flex items-center justify-center text-right">
-                    <div className='text-[#e3e3e3]'>
+                    <motion.div initial={{y:100, opacity:0}} whileInView={{y:0, opacity:1}} transition={{delay:1 , duration:2}}
+                          className='text-[#e3e3e3]'>
                         <div className='mb-[20px]'>
                             <small className='text-[33px] leading-none'>Focusing on</small><br></br>
                             <span className='text-[46px] leading-none'>Imagination</span>
@@ -58,7 +71,7 @@ function Vision() {
                             to explore their creative <br />potential and bring their
                             ideas to life. By focusing< br /> on imagination, we strive to inspire innovation, <br />discovery,
                             and progress in all aspects of life.</p>
-                    </div>
+                    </motion.div>
                 </div>
             </VisionWrap>
 

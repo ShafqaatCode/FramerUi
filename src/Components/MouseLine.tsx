@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
@@ -26,8 +26,6 @@ const StraightLineSVG = styled(motion.svg)`
 const WavyCursorTrail = () => {
   const [trail, setTrail] = useState<Point[]>([]);
   const numPoints = 20;
-  const stiffness = 200;
-  const damping = 25;
   const fadeOutDuration = 300;
 
   useEffect(() => {
@@ -54,20 +52,7 @@ const WavyCursorTrail = () => {
     };
   }, [numPoints]);
 
-    const points = trail; // added this line
-
-  const generateStraightPath = (points: Point[]): string => {
-    if (points.length < 2) {
-      return '';
-    }
-    let path = `M ${points[0].x} ${points[0].y}`;
-    for (let i = 1; i < points.length; i++) {
-      path += ` L ${points[i].x} ${points[i].y}`;
-    }
-    return path;
-  };
-
-  const straightLinePath = generateStraightPath(points);
+  const points = trail;
 
   return (
     <TrailWrapper>
@@ -76,25 +61,26 @@ const WavyCursorTrail = () => {
         height={window.innerHeight}
         style={{ top: 0, left: 0 }}
       >
-        {points.map((p, index) => { // Iterate and create a path for each segment.
-            const opacity = Math.max(0, 1 - (Date.now() - p.time) / fadeOutDuration);
-            const d = index > 0 ? `M ${points[index-1].x} ${points[index-1].y} L ${p.x} ${p.y}` : '';
-            return (
-              <motion.path
-                key={`${p.x}-${p.y}-${p.time}`}
-                d={d}
-                fill="transparent"
-                stroke="red"
-                strokeWidth="2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: opacity }}
-                transition={{
-                  duration: fadeOutDuration / 1000,
-                  ease: 'easeOut',
-                }}
-                exit={{opacity: 0}}
-              />
-            );
+        {points.map((p, index) => {
+          const opacity = Math.max(0, 1 - (Date.now() - p.time) / fadeOutDuration);
+          const d =
+            index > 0 ? `M ${points[index - 1].x} ${points[index - 1].y} L ${p.x} ${p.y}` : '';
+          return (
+            <motion.path
+              key={`${p.x}-${p.y}-${p.time}`}
+              d={d}
+              fill="transparent"
+              stroke="red"
+              strokeWidth="2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: opacity }}
+              transition={{
+                duration: fadeOutDuration / 1000,
+                ease: 'easeOut',
+              }}
+              exit={{ opacity: 0 }}
+            />
+          );
         })}
       </StraightLineSVG>
     </TrailWrapper>
