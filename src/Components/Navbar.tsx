@@ -42,7 +42,7 @@ const MenuContainer = styled.div<MenuContainerProps>`
     right: 20px;
     background: rgba(0,0,0,0.9);
     padding: 20px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
   }
 `
 
@@ -56,7 +56,7 @@ const MenuButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
+  /* display: none; */
 
   @media (max-width: 768px) {
     display: block;
@@ -76,17 +76,20 @@ function Navbar() {
         <img src={Logo} alt="Logo" />
       </LogoContainer>
 
-      <MenuButton onClick={ToggleMenu}>
-        <img src={MenuBtn} alt="Menu Button" className="w-[20px]" />
-      </MenuButton>
-
+     
+      <div className="flex gap-6 items-center">
       <MenuContainer isMobile={isMobile}>
         <MenuItem href="#home">About Us</MenuItem>
         <MenuItem href="#">Services</MenuItem>
         <MenuItem href="#">Blogs</MenuItem>
         <MenuItem href="#">Case Studies</MenuItem>
         <MenuItem href="#"><img src={Circle} className="w-[15px]" alt="" /></MenuItem>
+        
       </MenuContainer>
+      <MenuButton onClick={ToggleMenu}>
+        <img src={MenuBtn} alt="Menu Button" className="w-[20px]" />
+      </MenuButton>
+      </div>
     </NavbarContainer>
   )
 }

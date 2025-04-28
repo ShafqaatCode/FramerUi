@@ -10,6 +10,8 @@ import WebComp2 from "./Components/WebComp2";
 import "./App.css";
 import LetsDiveSection2 from "./Components/CreativeMan2";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Testimonials from "./Components/Footer";
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <div className="snap-section"><WebComp2 /></div>
         <div className="snap-section"><ThreeDesign /></div>
       </div>
+      <Testimonials />
     </>
   );
 }
