@@ -71,7 +71,7 @@ const WavyCursorTrail = () => {
               d={d}
               fill="transparent"
               stroke="red"
-              strokeWidth="2"
+              strokeWidth="3"
               initial={{ opacity: 0 }}
               animate={{ opacity: opacity }}
               transition={{
