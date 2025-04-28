@@ -53,6 +53,9 @@ const TagContainer = styled.div`
   overflow: hidden;
 `;
 
+
+
+
 const ironmanVariants = {
   initial: { y: 200, opacity: 0 },
   animate: {
@@ -87,6 +90,8 @@ const slideRight = {
 
 };
 
+
+
 const slideUp = {
     initial: { y: 200, opacity: 0 },
     animate: {
@@ -103,6 +108,7 @@ const slideUp = {
 function WebComp() {
   return (
     <>
+
       <DiveContainr>
         
         <FullScreenOverlay className="">

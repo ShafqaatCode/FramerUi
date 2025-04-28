@@ -9,10 +9,12 @@ import WebComp from "./Components/WebComp";
 import WebComp2 from "./Components/WebComp2";
 import "./App.css";
 import LetsDiveSection2 from "./Components/CreativeMan2";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <>
+      <Navbar /> 
       <MouseTrail />
       <div className="snap-scroll-container">
         <div className="snap-section"><Hero /></div>
