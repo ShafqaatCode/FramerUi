@@ -14,16 +14,62 @@ const BackgroundContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid red;
     width: 90%;
     margin: auto;
     gap: 10px;
     margin-top: 40px;
 
+
     p{
         font-size: 13px;
         font-family: sans-serif;
     }
+
+    @media (max-width: 768px) {
+    /* background-color: red; */
+    /* overflow: hidden; */
+    /* width: 100vw; */
+    flex-direction: column;
+    margin-top:40px;
+    /* height: 100vh; */
+    position: relative;
+
+    p{
+        display: none;
+    }
+
+    .left{
+       
+        position: absolute;
+        border: 2px solid red;
+        /* width: 100%; */
+        /* text-align: center; */
+        z-index: -1;
+        top: 5%;
+        left: 25%;
+
+        span{
+            font-size: 50px;
+            letter-spacing: none;
+           
+            
+        }
+    }
+
+
+
+    .right{
+        img{
+            width:90%
+        }
+    }
+
+    }
+   
 `
+
+
 
 const CloudContainer = styled.div`
     position: absolute;
@@ -63,9 +109,9 @@ function Hero() {
                             <p>of these industries.</p>
                         </div>
                     </div>
-                    <div className="right w-1/2">
+                    <div className="right lg:w-1/2 ">
                         <div>
-                            <img className='w-[85%]' src={MenImg} />
+                            <img className='lg:w-[85%]' src={MenImg} />
                         </div>
                     </div>
                 </BackgroundContainer>
