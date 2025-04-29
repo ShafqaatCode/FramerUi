@@ -26,6 +26,17 @@ const BackgroundContainer = styled.div`
         font-family: sans-serif;
     }
 
+    @media (max-width: 900px) {
+       .right{
+        /* background-color: red; */
+
+        img{
+            width:80%
+        }
+       }
+    }
+
+
     @media (max-width: 768px) {
     /* background-color: red; */
     /* overflow: hidden; */
