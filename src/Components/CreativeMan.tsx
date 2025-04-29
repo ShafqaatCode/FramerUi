@@ -31,7 +31,7 @@ const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
   color: #272827;
-  border: 2px solid red;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +94,7 @@ const RightContent = styled.div`
 
 const MovementImage = styled(motion.img)`
   width: 300px;
-  border: 2px solid; 
+  border: 1px solid; 
 `;
 
 const TagContainer = styled.div`
