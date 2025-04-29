@@ -31,6 +31,7 @@ const FullScreenOverlay = styled.div`
 const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
+
   border: 2px solid red;
   color: #272827;
   display: flex;
@@ -40,14 +41,14 @@ const LeftContent = styled(motion.div)`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    
+    margin-top: 25vh;
   }
   
 `;
 
 const AnimatedImage = styled(motion.img)`
   width: 100px;
-  border: 2px solid; /* Add border color if needed */
+  border: 2px solid;
   position: absolute;
   top: 22%;
   left: 10%;
