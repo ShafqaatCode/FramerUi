@@ -106,9 +106,10 @@ const ImageTwo = styled(motion.img)`
 
 const TextContent = styled(motion.div)`
   color: #e3e3e3;
+  margin-bottom: 40px;
 
   & > div {
-    margin-bottom: 20px;
+    margin-bottom:20px;
   }
 
   small {
