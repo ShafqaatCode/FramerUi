@@ -15,28 +15,118 @@ const DiveContainr = styled.div`
 
 const FullScreenOverlay = styled.div`
   position: absolute;
-  top: 0;
+  top: 20%;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 20; 
+  z-index: 20;
   display: flex;
+  flex-direction: row; /* Default to row on larger screens */
+
+  @media (max-width: 768px) {
+    flex-direction: column; 
+  }
 `;
 
 const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
-  color: white;
-/*   
-  border: 2px solid red; */
+  border: 2px solid red;
+  color: #272827;
+  display: flex;
+  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    
+  }
+  
+`;
+
+const AnimatedImage = styled(motion.img)`
+  width: 100px;
+  border: 2px solid; /* Add border color if needed */
+  position: absolute;
+  top: 22%;
+  left: 10%;
+
+  @media (max-width: 768px) {
+    top: 10px;
+    left: 10px;
+  }
+`;
+
+const TextContainer = styled.div`
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 0.8;
+
+  @media (max-width: 768px) {
+    /* align-items: flex-start; */
+  }
+`;
+
+const LeftTitle = styled(motion.h1)`
+  font-size: 85px;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.025em;
+  color: #272827;
+  text-align: center; /* Center on larger screens */
+
+  & > span {
+    font-size: 70px;
+  }
+
+  @media (max-width: 768px) {
+    border: 2px solid red;
+    font-size: 50px;
+    text-align: center; /* Align left on smaller screens */
+  }
+`;
+
+const LeftParagraph = styled(motion.p)`
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  color: #272827;
+  line-height: 1.5;
+  text-align: center; /* Center on larger screens */
+
+  @media (max-width: 768px) {
+    text-align: left; /* Align left on smaller screens */
+  }
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 20px;
-  color: white;
-  /* border: 2px solid green; */
-  
+  color: #272827; /* Changed text color to match left */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    align-items: flex-start; /* Align left on smaller screens */
+    margin-top: 30vh; /* Adjust margin as needed */
+  }
+`;
+
+const ServiceList = styled(motion.pre)`
+  color: #272827;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-family: sans-serif; /* Ensure consistent font */
+  white-space: pre-wrap; /* Preserve line breaks */
+  text-align: left; /* Align left on all screens */
+
+  @media (max-width: 768px) {
+    display: none; }
+
 `;
 
 const TagContainer = styled.div`
@@ -52,95 +142,91 @@ const TagContainer = styled.div`
   transform: translate(-50%, -50%);
   z-index: 10;
   overflow: hidden;
-  
+
+  @media (max-width: 768px) {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 6 / 4; /* Maintain aspect ratio */
+  }
 `;
 
-
 const ironmanVariants = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: [0, -20, 0],
-        opacity: 1,
-        transition: {
-            y: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-            },
-            opacity: { duration: 0.5 },
-            delay: 0.1,
-            type: "spring",
-            stiffness: 100,
-            damping: 12,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: [0, -20, 0],
+    opacity: 1,
+    transition: {
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      },
+      opacity: { duration: 0.5 },
+      delay: 0.1,
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
     },
+  },
 };
-
-
 
 const slideUp = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 1.5,
     },
-    // exit: { y: '100%', opacity: 0 },
-
+  },
 };
-
 
 const slideLeft = {
-    initial: { x: -200, opacity: 0 },
-    animate: {
-        x: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { x: -200, opacity: 0 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 1.5,
     },
-    // exit: { y: '100%', opacity: 0 },
-
+  },
 };
 
-
 function LetsDiveSection2() {
-    return (
-        <>
-        
-            <DiveContainr>
-                <TagContainer>
-
-                </TagContainer>
-
-                <FullScreenOverlay>
-                    <LeftContent className="text-[#272827] leading-none flex items-center justify-center flex-col" >
-                        <motion.img className="w-[100px] border-2 absolute top-[22%] left-[10%]" variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
-                        <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-
-                            <motion.h1 variants={slideLeft} initial="initial" whileInView="animate" className="text-[85px] text-center text-[#272827] font-[500] mb-6 tracking-tight"><span className="tracking-tight text-[70px]">graphics</span> Designing</motion.h1>
-                            <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[#272827] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
-                        </div>
-                    </LeftContent>
-                    <RightContent className="flex items-center justify-center">
-                        <motion.pre variants={slideLeft} initial="initial" whileInView="animate" className="text-[#272827] capitalize mb-[40px]">
-                            branding <br />
-                            logo design <br />
-                            illustration <br />
-                            billboard <br />
-                            printing stuff <br />
-                            brochure
-                        </motion.pre>
-                    </RightContent>
-                </FullScreenOverlay>
-            </DiveContainr>
-
-
-        </>
-    );
+  return (
+    <>
+      <DiveContainr>
+        <TagContainer />
+        <FullScreenOverlay>
+          <LeftContent>
+            <AnimatedImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+            <TextContainer>
+              <LeftTitle variants={slideLeft} initial="initial" whileInView="animate"><span className="tracking-tight text-[70px]">graphics</span> Designing</LeftTitle>
+              <LeftParagraph variants={slideUp} initial="initial" whileInView="animate">
+                As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation
+              </LeftParagraph>
+            </TextContainer>
+          </LeftContent>
+          <RightContent>
+            <ServiceList variants={slideLeft} initial="initial" whileInView="animate">
+              branding <br />
+              logo design <br />
+              illustration <br />
+              billboard <br />
+              printing stuff <br />
+              brochure
+            </ServiceList>
+          </RightContent>
+        </FullScreenOverlay>
+      </DiveContainr>
+      <hr />
+    </>
+  );
 }
 
 export default LetsDiveSection2;

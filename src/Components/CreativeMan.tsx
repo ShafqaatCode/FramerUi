@@ -68,7 +68,7 @@ const LeftParagraph = styled(motion.p)`
   line-height: 1.5; 
 
   @media (max-width: 768px) {
-    text-align: center;
+    /* text-align: center; */
   }
   
 `;
@@ -82,7 +82,7 @@ const RightContent = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    margin-top: 30vh;
+    margin-top: 20vh;
     order: 0;
     height: 20vh;
 
@@ -94,7 +94,7 @@ const RightContent = styled.div`
 
 const MovementImage = styled(motion.img)`
   width: 300px;
-  border: 2px solid; /* You might want to specify a color */
+  border: 2px solid; 
 `;
 
 const TagContainer = styled.div`
@@ -113,72 +113,88 @@ const TagContainer = styled.div`
 `;
 
 const ironmanVariants = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: [0, -20, 0],
-        opacity: 1,
-        transition: {
-            y: {
-                duration: 2,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-            },
-            opacity: { duration: 0.5 },
-            delay: 0.1,
-            type: "spring",
-            stiffness: 100,
-            damping: 12,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: [0, -20, 0],
+    opacity: 1,
+    transition: {
+      y: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      },
+      opacity: { duration: 0.5 },
+      delay: 0.1,
+      type: "spring",
+      stiffness: 100,
+      damping: 12,
     },
+  },
 };
 
 const slideUp = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 1,
     },
+  },
 };
 
 const slideLeft = {
-    initial: { x: -200, opacity: 0 },
-    animate: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { x: -200, opacity: 0 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 1.5,
     },
+  },
 };
 
 function LetsDiveSection() {
-    return (
-        <>
-            <DiveContainr>
-                <TagContainer />
-                <FullScreenOverlay>
-                    <LeftContent>
-                        <LeftTitle variants={slideLeft} initial="initial" whileInView="animate">LetsDIVE</LeftTitle>
-                        <LeftParagraph variants={slideUp} initial="initial" whileInView="animate">
-                            As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation
-                        </LeftParagraph>
-                    </LeftContent>
-                    <RightContent>
-                        <MovementImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
-                    </RightContent>
-                </FullScreenOverlay>
-            </DiveContainr>
-            <hr />
-        </>
-    );
+  return (
+    <>
+      <DiveContainr>
+        <TagContainer />
+        <FullScreenOverlay>
+          <LeftContent>
+            <LeftTitle
+              variants={slideLeft}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              LetsDIVE
+            </LeftTitle>
+
+            <LeftParagraph
+              variants={slideUp}
+              initial="initial"
+              animate="animate"
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              As a consultancy and creative agency <br />
+              specialized in design and cultural projects with a <br />
+              focus on crafts, heritage, and innovation
+            </LeftParagraph>
+
+          </LeftContent>
+          <RightContent>
+            <MovementImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+          </RightContent>
+        </FullScreenOverlay>
+      </DiveContainr>
+      <hr />
+    </>
+  );
 }
 
 export default LetsDiveSection;
