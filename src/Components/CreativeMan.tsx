@@ -19,24 +19,82 @@ const FullScreenOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 20; 
+  z-index: 20;
   display: flex;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
-  color: white;
-/*   
-  border: 2px solid red; */
+  color: #272827;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+
+  & > div {
+    text-align: center; 
+  }
+
+  @media (max-width: 768px) {
+    height: 25vh;
+    order: 1;
+  }
+`;
+
+const LeftTitle = styled(motion.h1)`
+  font-size: 85px;
+  font-weight: 500;
+  /* margin-bottom: 1rem; */
+  letter-spacing: -0.025em; /* Equivalent to tracking-tighter */
+  color: #272827;
+
+  @media (max-width: 768px) {
+      margin: 0;
+      font-size: 50px;
+    }
+`
+
+const LeftParagraph = styled(motion.p)`
+  font-family: sans-serif;
+  font-size: 0.875rem; 
+  color: #272827;
+  line-height: 1.5; 
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+  
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
-  /* border: 2px solid green; */
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    margin-top: 30vh;
+    order: 0;
+    height: 20vh;
+
+    & > img {
+      width: 50%;
+    }
+  }
+`;
+
+const MovementImage = styled(motion.img)`
+  width: 300px;
+  border: 2px solid; /* You might want to specify a color */
 `;
 
 const TagContainer = styled.div`
@@ -52,9 +110,7 @@ const TagContainer = styled.div`
   transform: translate(-50%, -50%);
   z-index: 10;
   overflow: hidden;
-  
 `;
-
 
 const ironmanVariants = {
     initial: { y: 200, opacity: 0 },
@@ -77,59 +133,50 @@ const ironmanVariants = {
     },
 };
 
-
-
 const slideUp = {
     initial: { y: 200, opacity: 0 },
     animate: {
-        y: 0, opacity: 1, transition: {
+        y: 0,
+        opacity: 1,
+        transition: {
             type: 'tween',
             ease: 'easeInOut',
             duration: 1.5,
         },
     },
-    // exit: { y: '100%', opacity: 0 },
-
 };
-
 
 const slideLeft = {
     initial: { x: -200, opacity: 0 },
     animate: {
-        x: 0, opacity: 1, transition: {
+        x: 0,
+        opacity: 1,
+        transition: {
             type: 'tween',
             ease: 'easeInOut',
             duration: 1.5,
         },
     },
-    // exit: { y: '100%', opacity: 0 },
-
 };
-
 
 function LetsDiveSection() {
     return (
         <>
             <DiveContainr>
-                <TagContainer>
-
-                </TagContainer>
-
+                <TagContainer />
                 <FullScreenOverlay>
-                    <LeftContent className="text-[#272827] leading-none flex items-center justify-center flex-col" >
-                        <div>
-                            <motion.h1 variants={slideLeft} initial="initial" whileInView="animate" className="text-[85px] text-[#272827] font-[500] mb-4 tracking-tighter">LetsDIVE</motion.h1>
-                            <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[#272827] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
-                        </div>
+                    <LeftContent>
+                        <LeftTitle variants={slideLeft} initial="initial" whileInView="animate">LetsDIVE</LeftTitle>
+                        <LeftParagraph variants={slideUp} initial="initial" whileInView="animate">
+                            As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation
+                        </LeftParagraph>
                     </LeftContent>
-                    <RightContent className="flex items-center justify-center">
-                        <motion.img className="w-[300px] border-2" variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+                    <RightContent>
+                        <MovementImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
                     </RightContent>
                 </FullScreenOverlay>
             </DiveContainr>
-         <hr />
-
-
+            <hr />
         </>
     );
 }
