@@ -1,15 +1,13 @@
 
 import styled from 'styled-components'
-
 import MenImg from '../assets/images/men22.png'
 import CloudImg from '../assets/images/cloud.png'
-
 const HeroContainer = styled.div`
-margin-top: 100px;
+margin-top: 50px;
     width: 100%;
     
+    
 `
-
 const BackgroundContainer = styled.div`
     display: flex;
     align-items: center;
@@ -28,7 +26,7 @@ const BackgroundContainer = styled.div`
 
     @media (max-width: 900px) {
        .right{
-        /* background-color: red; */
+      
 
         img{
             width:80%
@@ -38,12 +36,10 @@ const BackgroundContainer = styled.div`
 
 
     @media (max-width: 768px) {
-    /* background-color: red; */
-    /* overflow: hidden; */
-    /* width: 100vw; */
+
     flex-direction: column;
     margin-top:40px;
-    /* height: 100vh; */
+    
     position: relative;
 
     p{
@@ -54,8 +50,7 @@ const BackgroundContainer = styled.div`
        
         position: absolute;
         
-        /* width: 100%; */
-        /* text-align: center; */
+      
         z-index: -1;
         top: 5%;
         left: 25%;
@@ -92,7 +87,7 @@ const CloudContainer = styled.div`
     background-image: url(${CloudImg}) ;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-attachment: fixed; */
+    
     background-size: cover;
     z-index: -1;
 `
