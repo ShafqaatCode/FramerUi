@@ -82,7 +82,7 @@ const RightContent = styled.div`
   justify-content: center;
 
   @media (max-width: 768px) {
-    margin-top: 20vh;
+    margin-top: 25vh;
     order: 0;
     height: 20vh;
 
@@ -169,7 +169,7 @@ function LetsDiveSection() {
             <LeftTitle
               variants={slideLeft}
               initial="initial"
-              whileInView="animate"
+              animate="animate"
               viewport={{ once: true, amount: 0.5 }}
             >
               LetsDIVE
