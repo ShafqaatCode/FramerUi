@@ -127,8 +127,7 @@ const TextContent = styled(motion.div)`
     text-align: right;
 
     @media (max-width: 786px) {
-        /* border: 2px solid red; */
-        
+      
       text-align: center;
       padding: 0 10px;
     }

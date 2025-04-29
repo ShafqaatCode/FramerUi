@@ -18,15 +18,19 @@ const DiveContainr = styled.div`
 
 const FullScreenOverlay = styled.div`
   position: absolute;
-  top: 0;
+  /* top: 0; */
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 20;
   display: flex;
+  @media (max-width: 786px) {
+  bottom: 0;
+  }
 `;
 
 const LeftContent = styled(motion.div)`
+border: 2px solid red;
   flex: 1;
   padding: 20px;
   color: white;
@@ -36,6 +40,10 @@ const RightContent = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
+
+  @media (max-width: 786%) {
+    display: none;
+  }
 `;
 
 const TagContainer = styled.div`

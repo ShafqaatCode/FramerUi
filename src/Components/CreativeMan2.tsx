@@ -32,7 +32,7 @@ const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
 
-  border: 2px solid red;
+  /* border: 2px solid red; */
   color: #272827;
   display: flex;
   
@@ -48,7 +48,7 @@ const LeftContent = styled(motion.div)`
 
 const AnimatedImage = styled(motion.img)`
   width: 100px;
-  border: 2px solid;
+  border: 1px solid;
   position: absolute;
   top: 22%;
   left: 10%;
@@ -78,16 +78,16 @@ const LeftTitle = styled(motion.h1)`
   margin-bottom: 0.6rem;
   letter-spacing: -0.025em;
   color: #272827;
-  text-align: center; /* Center on larger screens */
+  text-align: center; 
 
   & > span {
     font-size: 70px;
   }
 
   @media (max-width: 768px) {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     font-size: 50px;
-    text-align: center; /* Align left on smaller screens */
+    text-align: center; 
   }
 `;
 
