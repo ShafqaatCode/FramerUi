@@ -1,69 +1,10 @@
 import styled from "styled-components";
 import bgimg from "../assets/images/letsdrivebg.jpg";
 import Tagbg from "../assets/images/seoupper.png";
-// import javasq from "../assets/images/javasq.png"
-import Movemen from "../assets/images/movemen.png"
+import Movemen from "../assets/images/movemen.png";
 import { motion } from "framer-motion";
 
-const DiveContainr = styled.div`
-  height: 100vh;
-  width: 100%;
-  /* background: url('${bgimg}');  */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #212529;
-  position: relative;
-  
-`;
-
-const FullScreenOverlay = styled.div`
-  position: absolute;
-  /* top: 0; */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 20;
-  display: flex;
-  @media (max-width: 786px) {
-  bottom: 0;
-  }
-`;
-
-const LeftContent = styled(motion.div)`
-border: 2px solid red;
-  flex: 1;
-  padding: 20px;
-  color: white;
-`;
-
-const RightContent = styled.div`
-  flex: 1;
-  padding: 20px;
-  color: white;
-
-  @media (max-width: 786%) {
-    display: none;
-  }
-`;
-
-const TagContainer = styled.div`
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  background: url('${Tagbg}');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  overflow: hidden;
-`;
-
-
-
-
+// Animation Variants
 const ironmanVariants = {
   initial: { y: 200, opacity: 0 },
   animate: {
@@ -86,59 +27,206 @@ const ironmanVariants = {
 };
 
 const slideRight = {
-    initial: { x: 200, opacity: 0 },
-    animate: {
-        x: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 2,
-        },
+  initial: { x: 200, opacity: 0 },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 2,
     },
-    // exit: { y: '100%', opacity: 0 },
-
+  },
 };
-
-
 
 const slideUp = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      ease: "easeInOut",
+      duration: 1.5,
     },
-    // exit: { y: '100%', opacity: 0 },
-
+  },
 };
 
+// Styled Components
+const DiveContainr = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: #212529;
+  position: relative;
+`;
+
+const FullScreenOverlay = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+`;
+
+const LeftContent = styled(motion.div)`
+  flex: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    padding: 40px 10px;
+  }
+`;
+
+const RightContent = styled.div`
+  flex: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const AnimatedImg = styled(motion.img)`
+  width: 100px;
+  position: absolute;
+  top: 22%;
+  left: 10%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const TitleContainer = styled.div`
+  text-align: center;
+  line-height: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+  }
+`;
+
+const MainTitle = styled(motion.h1)`
+  font-size: 75px;
+  color: lightgray;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+
+  span {
+    font-size: 60px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+    span {
+      font-size: 38px;
+    }
+  }
+`;
+
+const Paragraph = styled(motion.p)`
+  color: gainsboro;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+`;
+
+const ServicesText = styled(motion.pre)`
+  color: gainsboro;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+  font-size: 1rem;
+`;
+
+const TagContainer = styled.div`
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: url("${Tagbg}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow: hidden;
+`;
+
+// Main Component
 function WebComp() {
   return (
     <>
-
       <DiveContainr>
-        
-        <FullScreenOverlay className="">
-          <LeftContent className="text-[white] leading-none flex items-center  justify-center flex-col" >
-            <motion.img className="w-[100px] absolute top-[22%] left-[10%] " variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
-            <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-              <motion.h1 variants={slideRight} initial="initial" whileInView="animate" className="text-[75px] text-center text-[lightgray] font-[500] mb-6 tracking-tight"><span className="tracking-tight text-left text-[60px]">web</span><br/> Development</motion.h1>
-              <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
-            </div>
+        <FullScreenOverlay>
+          <LeftContent>
+            <AnimatedImg
+              variants={ironmanVariants}
+              initial="initial"
+              animate="animate"
+              src={Movemen}
+              alt="Animated"
+            />
+            <TitleContainer>
+              <MainTitle
+                variants={slideRight}
+                initial="initial"
+                whileInView="animate"
+              >
+                <span className="">web</span>
+                <br />
+                Development
+              </MainTitle>
+              <Paragraph
+                variants={slideUp}
+                initial="initial"
+                whileInView="animate"
+              >
+                As a consultancy and creative agency <br />
+                specialized in design and cultural projects with a <br />
+                focus on crafts, heritage, and innovation
+              </Paragraph>
+            </TitleContainer>
           </LeftContent>
-          <RightContent className="flex items-center justify-center">
-            <motion.pre variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] capitalize mb-[40px]">
+
+          <RightContent>
+            <ServicesText
+              variants={slideUp}
+              initial="initial"
+              whileInView="animate"
+            >
               CMS development <br />
               e-commerce development <br />
-              custom web applicatio <br />
-            </motion.pre>
+              custom web application <br />
+            </ServicesText>
           </RightContent>
         </FullScreenOverlay>
         <TagContainer />
       </DiveContainr>
       <hr />
-    
     </>
   );
 }
