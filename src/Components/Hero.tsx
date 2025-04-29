@@ -14,7 +14,7 @@ const BackgroundContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid red;
+    
     width: 90%;
     margin: auto;
     gap: 10px;
@@ -53,7 +53,7 @@ const BackgroundContainer = styled.div`
     .left{
        
         position: absolute;
-        border: 2px solid red;
+        
         /* width: 100%; */
         /* text-align: center; */
         z-index: -1;
