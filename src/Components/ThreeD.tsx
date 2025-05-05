@@ -31,6 +31,10 @@ const LeftContent = styled(motion.div)`
   padding: 20px;
   color: white;
 
+  p{
+    font-family: 'Poppins', sans-serif;
+  }
+
   @media (max-width: 768px) {
     padding: 0; 
     display: flex;
@@ -121,7 +125,7 @@ const AnimatedImg = styled(motion.img)`
 const AnimatedText = styled(motion.pre)`
     color: #212529;
     font-size: 1rem;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-bottom: 40px;
 `;
@@ -144,7 +148,7 @@ function ThreeDesign() {
                         <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
                         <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
                             <Title variants={slideUp} initial="initial" whileInView="animate"><span className="tracking-tight text-left text-[70px]">2D/</span>3D</Title>
-                            <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[#212529] font-sans text-sm"> Provide high-quality and visually appealing <br /> designs an animations, helping our clients bring <br /> their creative visions to life in various industries<br /> including gaming, entertainment, and architecture</motion.p>
+                            <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[#212529] text-sm"> Provide high-quality and visually appealing <br /> designs an animations, helping our clients bring <br /> their creative visions to life in various industries<br /> including gaming, entertainment, and architecture</motion.p>
                         </div>
                     </LeftContent>
                     <RightContent className="flex items-center justify-center">
