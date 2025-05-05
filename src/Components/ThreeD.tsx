@@ -148,7 +148,7 @@ function ThreeDesign() {
                         <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
                         <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
                             <Title variants={slideUp} initial="initial" whileInView="animate"><span className="tracking-tight text-left text-[70px]">2D/</span>3D</Title>
-                            <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[#212529] text-sm sm:text-center md:text-left  w-[400px]"> Provide high-quality and visually appealing designs an animations, helping our clients bring  their creative visions to life in various industries including gaming, entertainment, and architecture</motion.p>
+                            <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[#212529] text-sm sm:text-center md:text-left sm:w-[350px]  md:w-[400px]"> Provide high-quality and visually appealing designs an animations, helping our clients bring  their creative visions to life in various industries including gaming, entertainment, and architecture</motion.p>
                         </div>
                     </LeftContent>
                     <RightContent className="flex items-center justify-center">
