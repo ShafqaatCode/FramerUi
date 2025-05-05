@@ -114,7 +114,7 @@ const AnimatedImg = styled(motion.img)`
         width: 250px;
         border: 1px solid;
         top: 30%;
-        left: 30%;
+        left: 25%;
         /* transform: translate(-50%, -50%); */
     }
 `;
