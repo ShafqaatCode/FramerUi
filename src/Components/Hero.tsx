@@ -63,8 +63,7 @@ const BackgroundContainer = styled.div`
         
       
         z-index: -1;
-        top: 5%;
-        left: 25%;
+        
 
         span{
             font-size: 50px;
@@ -72,6 +71,15 @@ const BackgroundContainer = styled.div`
            
             
         }
+
+        @media (max-width: 800px) {
+            top: 8%;
+        left: 35%;
+
+            span{   
+                font-size: 80px;
+                letter-spacing: none;
+            }
     }
 
 
