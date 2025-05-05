@@ -62,10 +62,12 @@ const Box = styled.div`
 
   &.text-box {
     text-align: center;
+    /* border: 4px solid #ccc; */
     /* border:2px solid red; */
 
     @media (max-width: 768px) {
       text-align: center;
+      margin-bottom: 10%;
     }
   }
 `;
@@ -75,6 +77,8 @@ const MenRobeImage = styled(motion.img)`
 
   @media (max-width: 768px) {
     /* display: none; */
+    width: 70%;
+ /* background-position-y: 70px; */
     position: absolute;
     z-index: -1;
   }
