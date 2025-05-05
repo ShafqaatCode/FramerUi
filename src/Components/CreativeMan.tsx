@@ -35,6 +35,7 @@ const LeftContent = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  /* border: 2px solid #272827; */
   flex-direction: column;
   
 
@@ -44,6 +45,7 @@ const LeftContent = styled(motion.div)`
 
   @media (max-width: 768px) {
     height: 25vh;
+    margin-bottom: 20%;
     order: 1;
   }
 `;
@@ -169,7 +171,7 @@ function LetsDiveSection() {
             <LeftTitle
               variants={slideLeft}
               initial="initial"
-              whileInView="animate"
+              animate="animate"
               viewport={{ once: true, amount: 0.5 }}
             >
               LetsDIVE
