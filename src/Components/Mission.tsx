@@ -22,6 +22,10 @@ const GridLayout = styled.div`
   grid-template-columns: repeat(3, 1fr);
   height: 100vh;
   background-color: #212529;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr); /* Adjust to 2 columns */
+  }
 `;
 
 const GridItem = styled(motion.div)`
@@ -37,10 +41,22 @@ const GridItem = styled(motion.div)`
   }
 `;
 
+const LeftGridItem = styled(GridItem)`
+ 
+ @media (max-width: 768px) {
+    display: none;  
+ }
+`
+
 const RightGridItem = styled(GridItem)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  
+ @media (max-width: 768px) {
+    display: none;  
+ }
 `;
 
 const AnimatedNFT = styled(motion.img)`
@@ -57,6 +73,15 @@ const AnimatedText = styled(motion.p)`
   color: #bcb0b0;
   font-size: 13px;
   text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    margin: 0;
+   padding: 0px 40px;
+    
+    
+   
+    }
 `;
 
 const nftImages: string[] = [Nft1, Nft2, Nft3, Nft4];
@@ -79,8 +104,8 @@ const textAnimationDuration = 0.5;
 const textDisplayDuration = 3;
 
 const textContents = [
-    "Our mission is to provide better service {} and design to educate people about NFTs, their uses, and potential and potential impact on industries.",
-    "We provide accurate and up-to-date <br/> information to help individuals and <br/>businesses make informed decisions about NFTs.",
+    "Our mission is to provide better service {} and design to educate people about NFTs, their uses, and potential  on industries.",
+    "We provide accurate and up-to-date information to help individuals and businesses make informed decisions about NFTs.",
 ];
 
 
@@ -114,7 +139,7 @@ function Mission() {
         <MainContainer>
             <GridLayout>
 
-                <GridItem initial={{ x: 400, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 2 }} className="flex justify-center items-center relative">
+                <LeftGridItem initial={{ x: 400, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: 2 }} className="flex justify-center items-center relative">
                     <img src={NftLeft} alt="Left NFT" />
                     <div className="absolute top-1/2 left-1/2 w-4/5 transform -translate-x-1/2 -translate-y-1/2 text-center">
                         <AnimatePresence mode="wait">
@@ -130,7 +155,7 @@ function Mission() {
                             </AnimatedText>
                         </AnimatePresence>
                     </div>
-                </GridItem>
+                </LeftGridItem>
 
 
 
@@ -143,7 +168,35 @@ function Mission() {
                     />
 
                     <div className="absolute top-0 left-0 w-full h-full z-10 flex items-center">
-                        <div></div>
+                        <div className="absolute bottom-[18%] transform-translate-x-1/2 -translate-y-1/2 md:hidden">
+                            <AnimatePresence mode="wait">
+                                <AnimatedText
+                                    key={textContents[currentTextIndex]}
+                                    variants={textVariants}
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                    transition={{ duration: textAnimationDuration, ease: 'easeInOut', delay: 0.5 }}
+                                >
+                                    <span dangerouslySetInnerHTML={{ __html: textContents[currentTextIndex] }} />
+                                </AnimatedText>
+                            </AnimatePresence>
+
+                        </div>
+                        <AnimatePresence mode="wait" >
+                            {isImageVisible && (
+                                <AnimatedNFT className=" sm:left-[40%] left-[45%] md:left[40%] top-[60%] transform -translate-x-1/2 -translate-y-1/2 md:hidden w-[50px]"
+                                    key={nftImages[CurrentInd]}
+                                    src={nftImages[CurrentInd]}
+                                    alt={`NFT ${CurrentInd + 1}`}
+                                    variants={imageVariants}
+                                    initial="initial"
+                                    animate="animate"
+                                    exit="exit"
+                                    transition={{ duration: animationDuration, ease: 'easeInOut' }}
+                                />
+                            )}
+                        </AnimatePresence>
 
                         <motion.div
                             initial={{ y: 100, opacity: 0 }}
@@ -151,7 +204,7 @@ function Mission() {
                             transition={{ duration: 1.2, ease: "easeOut" }}
                             className="h-[80%] w-full flex items-start justify-start border-l-[1px]"
                         >
-                            <img src={Img3} alt="Top" className="h-full w-auto object-cover" />
+                            <img src={Img3} alt="Top" className="h-full w-auto object-cover hidden md:block" />
                         </motion.div>
 
                         <motion.div

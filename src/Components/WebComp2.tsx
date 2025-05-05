@@ -24,7 +24,6 @@ const FullScreenOverlay = styled.div`
   height: 100%;
   z-index: 20;
   display: flex;
-
   @media (max-width: 786px) {
     flex-direction: column;
     
