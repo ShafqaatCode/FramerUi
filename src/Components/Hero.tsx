@@ -9,7 +9,7 @@ const HeroContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border:2px solid red; */
+    border:2px solid red;
     height: 100vh;
     /* position: relative; */
     
@@ -17,7 +17,7 @@ const HeroContainer = styled.div`
 `
 const BackgroundContainer = styled.div`
     display: flex;
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
     height: 100vh;
     align-items: center;
     justify-content: center;
@@ -72,14 +72,14 @@ const BackgroundContainer = styled.div`
             letter-spacing: none;
            
             
-                    }}
+                    }
 
         @media (max-width: 800px) {
             top: 8%;
         left: 35%;
 
             span{   
-                font-size: 60px;
+                font-size: 50px;
                 letter-spacing: none;
             }
     }
