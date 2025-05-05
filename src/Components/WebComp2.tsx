@@ -44,7 +44,7 @@ const LeftContent = styled(motion.div)`
     justify-content: end;
 
     align-items: center;
-    margin-bottom: 20%;
+    margin-bottom: 30%;
     text-align: center;
 
     
