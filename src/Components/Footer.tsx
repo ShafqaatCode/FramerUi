@@ -1,14 +1,16 @@
+import { div } from 'framer-motion/client';
 import { useState } from 'react';
 import styled from 'styled-components';
 
 const TestimonialSection = styled.div`
   width: 100%;
-  max-height: 100vh;
+  height: 90vh;
   overflow-y: auto;
-  padding: 40px;
+  padding: 20px;
   background-color: #212529;
   /* border: 1px solid #fff; */
   color: #fff;
+ 
 `;
 
 const TopRow = styled.div`
@@ -133,7 +135,7 @@ function Testimonials() {
   const visibleVideoTestimonials = videoTestimonials.slice(currentVideo, currentVideo + 3);
 
   return (
-    <TestimonialSection>
+    <div className='bg-[#212529]'> <TestimonialSection>
       <h1 className="text-center text-3xl mt-4">Testimonials</h1>
       <TopRow>
         <CirclesContainer>
@@ -189,7 +191,8 @@ function Testimonials() {
           </VideoTestimonialCard>
         ))}
       </TestimonialsWrapper>
-    </TestimonialSection>
+    </TestimonialSection></div>
+
   );
 }
 
