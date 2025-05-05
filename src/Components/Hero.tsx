@@ -3,13 +3,22 @@ import styled from 'styled-components'
 import MenImg from '../assets/images/men22.png'
 import CloudImg from '../assets/images/cloud.png'
 const HeroContainer = styled.div`
-margin-top: 50px;
+    /* margin-top: 50px; */
+    padding-top: 50px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:2px solid red;
+    height: 100vh;
+    /* position: relative; */
     
     
 `
 const BackgroundContainer = styled.div`
     display: flex;
+    border: 2px solid blue;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     
