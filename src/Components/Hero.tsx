@@ -33,12 +33,13 @@ const BackgroundContainer = styled.div`
         font-family: sans-serif;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1000px) {
        .right{
       
 
         img{
-            width:80%
+            width:100%;
+            height: 80vh;
         }
        }
     }
