@@ -148,6 +148,10 @@ const Title = styled(motion.h1)`
   line-height: 0.8;
   letter-spacing: -0.05em;
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    font-size: 60px;
+    /* margin-bottom: 10px; */
+  }
   `;
 
 
@@ -161,8 +165,8 @@ function WebComp2() {
           <LeftContent className="text-[white] leading-none flex items-center  justify-center flex-col" >
             <AnimatedImg variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-              <Title variants={slideRight} initial="initial" whileInView="animate"><span className="tracking-tight text-[60px]">app</span><br /> Development</Title>
-              <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
+              <Title variants={slideRight} initial="initial" whileInView="animate"><span className="tracking-tight sm:text-[40px] md:text-[60px]">app</span><br /> Development</Title>
+              <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
             </div>
           </LeftContent>
           <RightContent className="flex items-center justify-center">
