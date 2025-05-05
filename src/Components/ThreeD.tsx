@@ -104,7 +104,7 @@ const slideUp = {
 
 const AnimatedImg = styled(motion.img)`
     width: 300px;
-    border: 1px solid;
+    
     position: absolute;
     top: 10%;
     left: 37%;
