@@ -38,6 +38,7 @@ const BackgroundContainer = styled.div`
       
 
         img{
+            
             width:120%;
             height: 80vh;
         }
@@ -77,7 +78,7 @@ const BackgroundContainer = styled.div`
 
     .right{
         img{
-            width:90%
+            width:100%
         }
     }
 
@@ -113,11 +114,11 @@ function Hero() {
 
 
                 <BackgroundContainer >
-                    <div className="left w-1/2 mt-[-50px]">
+                    <div className="left w-1/2 mt-[-80px]">
                         <div className='flex items-end justify-center flex-col  ' >
-                            <div className="flex flex-col items-end leading-none sm:mb-[10px] md:mb-[30px]">
-                                <span className="sm:text-[100px] md:text-[50px] font-[600] m-0 p-0">beyond</span>
-                                <span className="sm:text-[100px] md:text-[70px] font-[500] m-0 p-0 ">Creativity</span>
+                            <div className="flex flex-col items-end leading-none mb-[30px]">
+                                <span className="text-[50px] font-[600] m-0 p-0">beyond</span>
+                                <span className="text-[70px] font-[500] m-0 p-0 -mt-[12px]">Creativity</span>
                             </div>
                             <p>Our unique approach combines creativity</p>
                             <p>and expertise to deliver exceptional</p>
