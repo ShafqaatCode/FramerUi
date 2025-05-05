@@ -112,9 +112,10 @@ const AnimatedImg = styled(motion.img)`
     z-index: 30;
     @media (max-width: 768px) {
         width: 250px;
+        border: 1px solid;
         top: 30%;
         left: 30%;
-        transform: translate(-50%, -50%);
+        /* transform: translate(-50%, -50%); */
     }
 `;
 const AnimatedText = styled(motion.pre)`
