@@ -24,15 +24,33 @@ const FullScreenOverlay = styled.div`
   height: 100%;
   z-index: 20;
   display: flex;
+
+  @media (max-width: 786px) {
+    flex-direction: column;
+    
+    
+  }
 `;
 
 const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
   color: white;
+  
 
   @media (max-width: 768px) {
     padding: 0;
+    
+    display: flex;
+    justify-content: end;
+
+    align-items: center;
+    margin-bottom: 20%;
+    text-align: center;
+  }
+
+  p{
+    text-align: center;
   }
 `;
 
@@ -84,28 +102,28 @@ const ironmanVariants = {
 };
 
 const slideRight = {
-    initial: { x: 200, opacity: 0 },
-    animate: {
-        x: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 2,
-        },
+  initial: { x: 200, opacity: 0 },
+  animate: {
+    x: 0, opacity: 1, transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 2,
     },
-    // exit: { y: '100%', opacity: 0 },
+  },
+  // exit: { y: '100%', opacity: 0 },
 
 };
 
 const slideUp = {
-    initial: { y: 200, opacity: 0 },
-    animate: {
-        y: 0, opacity: 1, transition: {
-            type: 'tween',
-            ease: 'easeInOut',
-            duration: 1.5,
-        },
+  initial: { y: 200, opacity: 0 },
+  animate: {
+    y: 0, opacity: 1, transition: {
+      type: 'tween',
+      ease: 'easeInOut',
+      duration: 1.5,
     },
-    // exit: { y: '100%', opacity: 0 },
+  },
+  // exit: { y: '100%', opacity: 0 },
 
 };
 
@@ -137,13 +155,13 @@ const Title = styled(motion.h1)`
 function WebComp2() {
   return (
     <>
-     
+
       <DiveContainr>
         <FullScreenOverlay className="">
           <LeftContent className="text-[white] leading-none flex items-center  justify-center flex-col" >
-            <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+            <AnimatedImg variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-              <Title variants={slideRight} initial="initial" whileInView="animate"><span className="tracking-tight text-[60px]">app</span><br/> Development</Title>
+              <Title variants={slideRight} initial="initial" whileInView="animate"><span className="tracking-tight text-[60px]">app</span><br /> Development</Title>
               <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
             </div>
           </LeftContent>

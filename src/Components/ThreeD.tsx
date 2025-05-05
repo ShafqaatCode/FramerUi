@@ -30,13 +30,28 @@ const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 0; 
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 20%;
+    p{
+        text-align: center;
+    }
+  }
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
-`;
+
+
+  @media (max-width: 768px) {
+    display: none;
+    }`
 
 const TagContainer = styled.div`
   position: absolute;
@@ -87,6 +102,28 @@ const slideUp = {
 
 };
 
+const AnimatedImg = styled(motion.img)`
+    width: 300px;
+    border: 1px solid;
+    position: absolute;
+    top: 10%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
+    @media (max-width: 768px) {
+        width: 250px;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+`;
+const AnimatedText = styled(motion.pre)`
+    color: #212529;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+`;
+
 function ThreeDesign() {
     return (
         <>
@@ -94,14 +131,14 @@ function ThreeDesign() {
 
                 <FullScreenOverlay className="">
                     <LeftContent className="text-[#212529] leading-none flex items-center  justify-center flex-col" >
-                        <motion.img className="w-[320px] absolute top-[10%] left-[37%] -translate-x-1/2 -translate-y-1/2 " variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+                        <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
                         <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
                             <motion.h1 variants={slideUp} initial="initial" whileInView="animate" className="text-[85px] text-center text-[#212529] font-[500] mb-[40px] tracking-tight"><span className="tracking-tight text-left text-[70px]">2D/</span>3D</motion.h1>
                             <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[#212529] font-sans text-sm"> Provide high-quality and visually appealing <br /> designs an animations, helping our clients bring <br /> their creative visions to life in various industries<br /> including gaming, entertainment, and architecture</motion.p>
                         </div>
                     </LeftContent>
                     <RightContent className="flex items-center justify-center">
-                        <motion.pre variants={slideUp} initial="initial" whileInView="animate" className="text-[#212529] capitalize mb-[40px]">
+                        <AnimatedText variants={slideUp} initial="initial" whileInView="animate" className="text-[#212529] capitalize mb-[40px]">
 
 
                             2D - 3D art <br />
@@ -112,7 +149,7 @@ function ThreeDesign() {
                             explainer video <br />
 
 
-                        </motion.pre>
+                        </AnimatedText>
                     </RightContent>
                 </FullScreenOverlay>
                 <TagContainer />

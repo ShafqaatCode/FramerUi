@@ -210,7 +210,7 @@ function LetsDiveSection2() {
           <LeftContent>
             <AnimatedImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <TextContainer>
-              <LeftTitle variants={slideLeft} initial="initial" whileInView="animate"><span className="tracking-tight text-[70px]">graphics</span> Designing</LeftTitle>
+              <LeftTitle variants={slideLeft} initial="initial" whileInView="animate"><span className="tracking-tight text-[70px]">graphics</span> <br/>Designing</LeftTitle>
               <LeftParagraph variants={slideUp} initial="initial" animate="animate">
                 As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation
               </LeftParagraph>

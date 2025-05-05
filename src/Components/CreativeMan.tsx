@@ -68,7 +68,7 @@ const LeftParagraph = styled(motion.p)`
   line-height: 1.5; 
 
   @media (max-width: 768px) {
-    /* text-align: center; */
+    text-align: center;
   }
   
 `;
@@ -169,7 +169,7 @@ function LetsDiveSection() {
             <LeftTitle
               variants={slideLeft}
               initial="initial"
-              animate="animate"
+              whileInView="animate"
               viewport={{ once: true, amount: 0.5 }}
             >
               LetsDIVE
