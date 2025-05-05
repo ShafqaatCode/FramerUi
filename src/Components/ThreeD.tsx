@@ -110,8 +110,8 @@ const AnimatedImg = styled(motion.img)`
     width: 300px;
     
     position: absolute;
-    top: 5%;
-    left: 30%;
+    top: 15%;
+    left: 40%;
     transform: translate(-50%, -50%);
     z-index: 30;
     @media (max-width: 768px) {
@@ -119,12 +119,12 @@ const AnimatedImg = styled(motion.img)`
         /* border: 1px solid; */
         top: 20%;
         left: 20%;
-        /* transform: translate(-50%, -50%); */
+        transform: translate(-50%, -50%);
     }
 `;
 const AnimatedText = styled(motion.pre)`
     color: #212529;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     margin-bottom: 40px;
