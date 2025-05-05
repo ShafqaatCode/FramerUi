@@ -84,10 +84,10 @@ const LeftContent = styled(motion.div)`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     justify-content: flex-end;
     padding: 40px 10px;
-    margin-bottom: 20%;
+    margin-bottom: 30%;
   }
 `;
 

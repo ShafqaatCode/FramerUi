@@ -42,6 +42,7 @@ const LeftContent = styled(motion.div)`
 
   @media (max-width: 768px) {
     margin-top: 10vh;
+    margin-bottom: 10%;
   }
   
 `;
