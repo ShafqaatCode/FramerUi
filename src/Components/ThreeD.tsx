@@ -115,10 +115,10 @@ const AnimatedImg = styled(motion.img)`
     transform: translate(-50%, -50%);
     z-index: 30;
     @media (max-width: 768px) {
-        width: 200px;
+        width: 220px;
         /* border: 1px solid; */
-        top: 20%;
-        left: 20%;
+        top: 25%;
+        left: 22%;
         transform: translate(-50%, -50%);
     }
 `;
