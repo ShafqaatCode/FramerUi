@@ -106,8 +106,8 @@ const AnimatedImg = styled(motion.img)`
     width: 300px;
     
     position: absolute;
-    top: 10%;
-    left: 37%;
+    top: 5%;
+    left: 30%;
     transform: translate(-50%, -50%);
     z-index: 30;
     @media (max-width: 768px) {
