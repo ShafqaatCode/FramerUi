@@ -41,7 +41,7 @@ const LeftContent = styled(motion.div)`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
   
 `;
