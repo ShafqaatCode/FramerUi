@@ -39,15 +39,11 @@ const LeftContent = styled(motion.div)`
 
   @media (max-width: 768px) {
     padding: 0;
-    
     display: flex;
     justify-content: end;
-
     align-items: center;
     margin-bottom: 30%;
     text-align: center;
-
-    
     @media (max-width: 700px) {
       margin-bottom: 20%;
     }
