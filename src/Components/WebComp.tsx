@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bgimg from "../assets/images/letsdrivebg.jpg";
+
 import Tagbg from "../assets/images/seoupper.png";
 import Movemen from "../assets/images/movemen.png";
 import { motion } from "framer-motion";
