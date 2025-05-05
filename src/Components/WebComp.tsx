@@ -87,6 +87,7 @@ const LeftContent = styled(motion.div)`
   @media (max-width: 768px) {
     justify-content: flex-end;
     padding: 40px 10px;
+    margin-bottom: 20%;
   }
 `;
 
@@ -197,13 +198,13 @@ function WebComp() {
                 whileInView="animate"
               >
                 <span className="">web</span>
-                <br />
+                
                 Development
               </MainTitle>
               <Paragraph
                 variants={slideUp}
                 initial="initial"
-                whileInView="animate"
+                animate="animate"
               >
                 As a consultancy and creative agency <br />
                 specialized in design and cultural projects with a <br />

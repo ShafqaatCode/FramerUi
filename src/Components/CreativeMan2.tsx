@@ -41,21 +41,22 @@ const LeftContent = styled(motion.div)`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    margin-top: 25vh;
+    margin-top: 20vh;
   }
   
 `;
 
 const AnimatedImage = styled(motion.img)`
   width: 100px;
-  border: 1px solid;
+  /* border: 1px solid red; */
   position: absolute;
   top: 22%;
   left: 10%;
 
   @media (max-width: 768px) {
-    top: 10px;
-    left: 10px;
+    width: 120px;
+   top: 25%;
+   left: 35%;
   }
 `;
 
@@ -96,24 +97,26 @@ const LeftParagraph = styled(motion.p)`
   font-size: 0.875rem;
   color: #272827;
   line-height: 1.5;
-  text-align: center; /* Center on larger screens */
+  text-align: center; 
 
   @media (max-width: 768px) {
-    text-align: left; /* Align left on smaller screens */
+    text-align: center;
+    margin-top: 20px; 
   }
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 20px;
-  color: #272827; /* Changed text color to match left */
+  color: #272827; 
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 768px) {
-    align-items: flex-start; /* Align left on smaller screens */
-    margin-top: 30vh; /* Adjust margin as needed */
+    display: none;
+    align-items: flex-start; 
+    margin-top: 30vh; 
   }
 `;
 
@@ -121,9 +124,9 @@ const ServiceList = styled(motion.pre)`
   color: #272827;
   text-transform: capitalize;
   margin-bottom: 40px;
-  font-family: sans-serif; /* Ensure consistent font */
-  white-space: pre-wrap; /* Preserve line breaks */
-  text-align: left; /* Align left on all screens */
+  font-family: sans-serif; 
+  white-space: pre-wrap; 
+  text-align: left; 
 
   @media (max-width: 768px) {
     display: none; }
@@ -147,7 +150,7 @@ const TagContainer = styled.div`
   @media (max-width: 768px) {
     width: 80%;
     height: auto;
-    aspect-ratio: 6 / 4; /* Maintain aspect ratio */
+    aspect-ratio: 6 / 4;
   }
 `;
 
@@ -208,13 +211,13 @@ function LetsDiveSection2() {
             <AnimatedImage variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <TextContainer>
               <LeftTitle variants={slideLeft} initial="initial" whileInView="animate"><span className="tracking-tight text-[70px]">graphics</span> Designing</LeftTitle>
-              <LeftParagraph variants={slideUp} initial="initial" whileInView="animate">
+              <LeftParagraph variants={slideUp} initial="initial" animate="animate">
                 As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation
               </LeftParagraph>
             </TextContainer>
           </LeftContent>
-          <RightContent>
-            <ServiceList variants={slideLeft} initial="initial" whileInView="animate">
+          <RightContent className="hidden">
+            <ServiceList variants={slideLeft} initial="initial" animate="animate">
               branding <br />
               logo design <br />
               illustration <br />

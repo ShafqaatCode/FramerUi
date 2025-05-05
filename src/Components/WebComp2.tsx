@@ -30,12 +30,21 @@ const LeftContent = styled(motion.div)`
   flex: 1;
   padding: 20px;
   color: white;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const RightContent = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  /* border: 2px solid red; */  
 `;
 
 const TagContainer = styled.div`
@@ -100,6 +109,31 @@ const slideUp = {
 
 };
 
+const AnimatedImg = styled(motion.img)`
+  width: 100px;
+  position: absolute;
+  top: 22%;
+  left: 10%;
+  z-index: 30;
+  /* display: none; */
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Title = styled(motion.h1)`
+  font-size: 75px;
+  text-align: center;
+  color: lightgray;
+  font-weight: 500;
+  margin-bottom: 6px;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+  `;
+
+
+
 function WebComp2() {
   return (
     <>
@@ -107,9 +141,9 @@ function WebComp2() {
       <DiveContainr>
         <FullScreenOverlay className="">
           <LeftContent className="text-[white] leading-none flex items-center  justify-center flex-col" >
-            <motion.img className="w-[100px] absolute top-[22%] left-[10%] " variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
+            <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
             <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-              <motion.h1 variants={slideRight} initial="initial" whileInView="animate" className="text-[75px] text-center text-[lightgray] font-[500] mb-6 tracking-tight"><span className="tracking-tight text-[60px]">app</span><br/> Development</motion.h1>
+              <Title variants={slideRight} initial="initial" whileInView="animate"><span className="tracking-tight text-[60px]">app</span><br/> Development</Title>
               <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[gainsboro] font-sans text-sm"> As a consultancy and creative agency <br /> specialized in design and cultural projects with a <br />focus on crafts, heritage, and innovation</motion.p>
             </div>
           </LeftContent>
