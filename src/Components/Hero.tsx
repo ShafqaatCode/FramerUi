@@ -57,6 +57,8 @@ const BackgroundContainer = styled.div`
         display: none;
     }
 
+
+
     .left{
        
         position: absolute;
@@ -70,14 +72,14 @@ const BackgroundContainer = styled.div`
             letter-spacing: none;
            
             
-        }
+                    }}
 
         @media (max-width: 800px) {
             top: 8%;
         left: 35%;
 
             span{   
-                font-size: 80px;
+                font-size: 60px;
                 letter-spacing: none;
             }
     }
