@@ -22,6 +22,7 @@ const TopRow = styled.div`
 
 const CirclesContainer = styled.div`
   display: flex;
+  margin:10px 0;
   
   gap: 8px;
 `;
