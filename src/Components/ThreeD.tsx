@@ -119,10 +119,19 @@ const AnimatedImg = styled(motion.img)`
 `;
 const AnimatedText = styled(motion.pre)`
     color: #212529;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-family: sans-serif;
     font-weight: 500;
     margin-bottom: 40px;
 `;
+const Title = styled(motion.h1)`
+    font-size: 85px;
+    text-align: center;
+    color: #212529;
+    font-weight: 500;
+    margin-bottom: 40px;
+`
+
 
 function ThreeDesign() {
     return (
@@ -133,8 +142,8 @@ function ThreeDesign() {
                     <LeftContent className="text-[#212529] leading-none flex items-center  justify-center flex-col" >
                         <AnimatedImg  variants={ironmanVariants} initial="initial" animate="animate" src={Movemen} alt="" />
                         <div className="text-left flex items-center justify-center flex-col leading-[0.8] ">
-                            <motion.h1 variants={slideUp} initial="initial" whileInView="animate" className="text-[85px] text-center text-[#212529] font-[500] mb-[40px] tracking-tight"><span className="tracking-tight text-left text-[70px]">2D/</span>3D</motion.h1>
-                            <motion.p variants={slideUp} initial="initial" whileInView="animate" className="text-[#212529] font-sans text-sm"> Provide high-quality and visually appealing <br /> designs an animations, helping our clients bring <br /> their creative visions to life in various industries<br /> including gaming, entertainment, and architecture</motion.p>
+                            <Title variants={slideUp} initial="initial" whileInView="animate"><span className="tracking-tight text-left text-[70px]">2D/</span>3D</Title>
+                            <motion.p variants={slideUp} initial="initial" animate="animate" className="text-[#212529] font-sans text-sm"> Provide high-quality and visually appealing <br /> designs an animations, helping our clients bring <br /> their creative visions to life in various industries<br /> including gaming, entertainment, and architecture</motion.p>
                         </div>
                     </LeftContent>
                     <RightContent className="flex items-center justify-center">
