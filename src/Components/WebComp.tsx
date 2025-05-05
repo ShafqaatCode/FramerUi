@@ -87,7 +87,7 @@ const LeftContent = styled(motion.div)`
   @media (max-width: 800px) {
     justify-content: flex-end;
     padding: 40px 10px;
-    margin-bottom: 30%;
+    margin-bottom: 20%;
   }
 `;
 
