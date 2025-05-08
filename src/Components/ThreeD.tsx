@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import bgimg from "../assets/images/3dbg.jpg";
 import Tagbg from "../assets/images/assissination.png";
-// import javasq from "../assets/images/javasq.png"
+
 import Movemen from "../assets/images/moveVectr.png"
 import { motion } from "framer-motion";
 

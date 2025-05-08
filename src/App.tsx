@@ -1,20 +1,20 @@
 import { useEffect, useRef } from "react";
-import LetsDiveSection from "./Components/CreativeMan";
-import Hero from "./Components/Hero";
-import Mission from "./Components/Mission";
+import Navbar from "./Components/Navbar";
 import MouseTrail from "./Components/MouseLine";
-import ThreeDesign from "./Components/ThreeD";
+import Hero from "./Components/Hero";
 import Vision from "./Components/Vision";
+import Mission from "./Components/Mission";
+import LetsDiveSection from "./Components/CreativeMan";
+import LetsDiveSection2 from "./Components/CreativeMan2";
 import WebComp from "./Components/WebComp";
 import WebComp2 from "./Components/WebComp2";
-import LetsDiveSection2 from "./Components/CreativeMan2";
-import Navbar from "./Components/Navbar";
+import ThreeDesign from "./Components/ThreeD";
 import Testimonials from "./Components/Footer";
 import "./App.css";
 
 function App() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  let isScrolling = false;
+  const isScrolling = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -23,9 +23,37 @@ function App() {
     const sections = container.querySelectorAll<HTMLDivElement>(".snap-section");
     let currentIndex = 0;
 
+    const scrollToSection = (targetIndex: number) => {
+      if (!container) return;
+
+      const targetY = sections[targetIndex].offsetTop;
+      const startY = container.scrollTop;
+      const distance = targetY - startY;
+      const duration = 800; // slow scroll duration (ms)
+      let startTime: number | null = null;
+
+      const easeInOutQuad = (t: number) =>
+        t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+      const animateScroll = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = (timestamp - startTime) / duration;
+        const ease = easeInOutQuad(Math.min(progress, 1));
+        container.scrollTop = startY + distance * ease;
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          isScrolling.current = false;
+        }
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
-      if (isScrolling) return;
+      if (isScrolling.current) return;
 
       if (e.deltaY > 0 && currentIndex < sections.length - 1) {
         currentIndex++;
@@ -35,12 +63,8 @@ function App() {
         return;
       }
 
-      isScrolling = true;
-      sections[currentIndex].scrollIntoView({ behavior: "smooth" });
-
-      setTimeout(() => {
-        isScrolling = false;
-      }, 1000);
+      isScrolling.current = true;
+      scrollToSection(currentIndex);
     };
 
     container.addEventListener("wheel", handleWheel, { passive: false });

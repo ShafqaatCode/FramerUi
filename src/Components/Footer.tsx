@@ -1,12 +1,12 @@
-import { div } from 'framer-motion/client';
+
 import { useState } from 'react';
 import styled from 'styled-components';
 
 const TestimonialSection = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow-y: auto;
-  padding: 20px;
+  padding: 40px;
   background-color: #212529;
   /* border: 1px solid #fff; */
   color: #fff;
